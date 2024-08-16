@@ -1,0 +1,28 @@
+<mat-card appearance="outlined">
+  <mat-card-header class="card-header">
+    <div class="header-content">
+      <mat-card-title>
+        {{ ticker_symbol }}
+      </mat-card-title>
+      <mat-card-subtitle>{{ company_name }}</mat-card-subtitle>
+    </div>
+  </mat-card-header>
+
+  <mat-card-content>
+    <div class="chart-container">
+      <canvas #chart id="chart"></canvas>
+    </div>
+  </mat-card-content>
+
+  <mat-card-content>
+    <div class="info-container">
+      <h6>${{ market_price }}</h6>
+      <div class="info-items">
+        <span>Volume: {{ average_volume }}</span>
+        <span>w52high: ${{ week52high }}</span> 
+        <span>w52low: ${{ week52low }}</span>
+        <span class="highlight">{{ market_exchange }}</span>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

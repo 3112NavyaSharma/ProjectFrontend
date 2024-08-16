@@ -1,0 +1,66 @@
+
+/* Apply the Poppins font to the entire app */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+  font-family: 'Poppins', sans-serif;
+  
+  
+}
+
+.title{
+    background-color: #d1ece6;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
+
+
+
+.full-popup .dialog-popup{
+    background-color: #d1ece6;
+}
+
+  /* Style for company-name and issuer */
+  .company-name, .issuer {
+    font-weight: 400; /* Semi-bold */
+    display: block;
+    color: #333;
+    text-align: center;
+  }
+  
+  /* Style the mat-form-field and its content */
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  /* Style the pre element to ensure it looks consistent */
+  pre {
+    background: #f5f5f5;
+    border-radius: 8px;
+    padding: 10px;
+    display: block;
+    text-align: center;
+    margin: 10px 0;
+  }
+  
+  /* Style buttons to be in a container with no hard edges */
+  button {
+    border-radius: 8px;
+    margin: 5px;
+  }
+  
+  /* Style for the container around action buttons */
+  .action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .buy{
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 5px;
+  }
+  

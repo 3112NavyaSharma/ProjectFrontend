@@ -1,0 +1,59 @@
+<div *ngIf="data.type == 'stock'" class="full-popup">
+<h2 mat-dialog-title class="title">{{data.ticker_symbol}} <span class="company-name">{{data.company_name}}</span></h2>
+
+<mat-dialog-content class="dialog-popup">
+
+<mat-tab-group>
+    <mat-tab label="Buy">
+      <ng-template mat-tab-label>
+        <span class="buy">
+          Buy
+        </span>
+      </ng-template>
+
+          <mat-form-field>
+            <mat-label> Quantity </mat-label>
+            <input type="number" min="0" [formControl]="quantity" placeholder="0" matInput>
+            </mat-form-field>
+
+    <pre>  <span>Selected Quantity: {{quantity.value}}    Price: {{ quantity.value * data.stockPrice}} </span></pre>
+            <div class="action-buttons">
+              <button mat-raised-button (click)="buyStock()">Make purchase</button>
+              <button mat-raised-button (click)="onNoClick()">Cancel</button>
+            </div>
+
+    </mat-tab>
+  </mat-tab-group>
+</mat-dialog-content>
+</div>
+
+<div *ngIf="data.type == 'bond'" class="full-popup">
+<h2  mat-dialog-title class="title">{{data.id}} <span class="issuer">{{data.issuer}}</span></h2>
+<mat-dialog-content class="dialog-popup">
+<mat-tab-group>
+    <mat-tab label="Buy">
+      <ng-template mat-tab-label>
+        <span class="buy">
+          Buy
+        </span>
+      </ng-template>
+          <mat-form-field>
+         
+            <mat-label> Quantity </mat-label>
+            <input type="number" min="0"   [formControl]="quantity" placeholder="0" matInput>
+            </mat-form-field>
+  <pre> <span> Selected Quantity: {{quantity.value}}    Price: {{ quantity.value * data.bondPrice}}</span></pre>
+  <div class="action-buttons">
+    <button mat-raised-button (click)="buyBond()">Make purchase</button>
+    <button mat-raised-button (click)="onNoClick()">Cancel</button>
+  </div>
+    
+    </mat-tab>
+  </mat-tab-group>
+  
+
+
+ 
+</mat-dialog-content>
+
+</div>

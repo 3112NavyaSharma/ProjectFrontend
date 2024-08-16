@@ -1,0 +1,15 @@
+<mat-toolbar class="custom-toolbar">
+    <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button> -->
+    <mat-icon [routerLink]="['']" mat-icon-button aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
+    <span class="title">PortfolioManagement</span>
+    <span class="example-spacer"></span>
+    <span [routerLink]="['/assets']" class="nav-element">Assets</span>
+    <span [routerLink]="['/tradebook']" class="nav-element">Tradebook</span>
+    <span [routerLink]="['/cashflowbook']" class="nav-element">Cashflowbook</span>
+    <span [routerLink]="['/orderbook']" class="nav-element">Orderbook</span>
+  </mat-toolbar>
+  
+
+<router-outlet></router-outlet>

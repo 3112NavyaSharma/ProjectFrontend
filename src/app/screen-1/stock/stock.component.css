@@ -1,0 +1,104 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+/* Basic resets */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Define color variables for consistency */
+:host {
+  --dominant-color: #f7e8e9; /* 60% */
+  --secondary-color: #C8A1E0; /* 30% */
+  --accent-color: #c193de; /* 10% */  
+  --text-color: #333; 
+  --highlight-color: #333;
+}
+/* Card Styles */
+mat-card {
+  max-width: 400px;
+  margin: 20px auto;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  background-color: var(--dominant-color);
+  padding: 10px; /* Add padding inside the card */
+}
+
+mat-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Header Styles */
+.card-header {
+  background-color: var(--dominant-color);
+  border-bottom: 1px solid #e0e0e0;
+  padding: 16px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+mat-card-title {
+  font-size: 1.25em;
+  font-weight: bold;
+  color: var(--text-color);
+  margin-right: 16px; /* Space between ticker symbol and company name */
+}
+
+mat-card-subtitle {
+  font-size: 1.25em;
+  color: #666;
+}
+
+/* Content Styles */
+mat-card-content {
+  padding: 10px; /* Add padding inside content areas */
+}
+
+.chart-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.info-container {
+  line-height: 1.6;
+  margin-top: 16px;
+  padding: 10px; /* Add padding inside the info container */
+}
+
+.info-container h6 {
+  font-size: 1.25rem;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.info-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.info-items span {
+  font-size: 0.875rem;
+  color: var(--text-color);
+}
+
+.highlight {
+  background-color: var(--highlight-background);
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-weight: bold;
+  color: var(--highlight-color);
+}

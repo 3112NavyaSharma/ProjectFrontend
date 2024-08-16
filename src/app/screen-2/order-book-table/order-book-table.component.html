@@ -1,0 +1,138 @@
+<div class="toggle-button-container">
+  <button id="somebutton" (click)="handleSwitch()" mat-button>
+    Switch to 
+    <span *ngIf="toggleCharts"> table </span>
+    <span *ngIf="!toggleCharts"> charts </span>
+  </button>
+</div>
+   
+<div *ngIf="!toggleCharts">
+
+<mat-tab-group class="nav-tabs">
+    <mat-tab label="Stocks">
+      <ng-template mat-tab-label>
+        <span class="tabs">Stock</span>
+      </ng-template>
+        <mat-table [dataSource]="stockEntries" class="mat-elevation-z8">
+            <!-- Order ID Column -->
+
+            <ng-container matColumnDef="order_id">
+              <mat-header-cell *matHeaderCellDef> Order ID </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.order_id}} </mat-cell>
+            </ng-container>
+          
+            <!-- Ticker Symbol Column -->
+            <ng-container matColumnDef="ticker_symbol"   >
+              <mat-header-cell  *matHeaderCellDef> Ticker Symbol </mat-header-cell>
+              <mat-cell  *matCellDef="let element"> <span style="cursor: pointer;" (click)="openDialog(element.stock.tickerSymbol, true)"> {{element.stock.tickerSymbol}}</span>  </mat-cell>
+            </ng-container>
+          
+            <!-- Trade Date Column -->
+            <ng-container matColumnDef="trade_date">
+              <mat-header-cell *matHeaderCellDef> Trade Date </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.stock.tradeDate}} </mat-cell>
+            </ng-container>
+          
+            <!-- Asset Name Column -->
+            <ng-container matColumnDef="asset_name">
+              <mat-header-cell *matHeaderCellDef> Asset Name </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.asset_name}} </mat-cell>
+            </ng-container>
+          
+            <!-- Volume Column -->
+            <ng-container matColumnDef="volume">
+              <mat-header-cell *matHeaderCellDef> Volume </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.volume}} </mat-cell>
+            </ng-container>
+      
+          
+            <!-- Bought Price Column -->
+            <ng-container matColumnDef="bought_price">
+              <mat-header-cell *matHeaderCellDef> Bought Price </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.bought_price}} </mat-cell>
+            </ng-container>
+
+              <!-- Unrealized P&L Column -->
+  <ng-container matColumnDef="unrealized_pnl">
+    <mat-header-cell *matHeaderCellDef> Unrealized PnL </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{getUnrealizedPnl(element) | number:'1.2-2'}} </mat-cell>
+  </ng-container>
+            
+            <!-- Header Row -->
+            <mat-header-row *matHeaderRowDef="displayedColumns2"></mat-header-row>
+          
+            <!-- Row -->
+            <mat-row *matRowDef="let row; columns: displayedColumns2;"></mat-row>
+          </mat-table>
+        
+    </mat-tab>
+    <mat-tab label="Bonds">
+      <ng-template mat-tab-label>
+        <span class="tabs">Bond</span>
+      </ng-template>
+        <mat-table [dataSource]="bondEntries" class="mat-elevation-z8">
+            <!-- Order ID Column -->
+            <ng-container matColumnDef="order_id">
+              <mat-header-cell *matHeaderCellDef> Order ID </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.order_id}} </mat-cell>
+            </ng-container>
+          
+            <!-- Ticker Symbol Column -->
+            <ng-container matColumnDef="ticker_symbol">
+              <mat-header-cell *matHeaderCellDef> Ticker Symbol </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.bond.tickerSymbol}} </mat-cell>
+            </ng-container>
+          
+            <!-- Trade Date Column -->
+            <ng-container matColumnDef="trade_date">
+              <mat-header-cell *matHeaderCellDef> Trade Date </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.bond.tradeDate}} </mat-cell>
+            </ng-container>
+          
+            <!-- Asset Name Column -->
+            <ng-container matColumnDef="asset_name">
+              <mat-header-cell *matHeaderCellDef> Asset Name </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.asset_name}} </mat-cell>
+            </ng-container>
+          
+       
+            <!-- Bond Price Column -->
+            <ng-container matColumnDef="bond_price">
+              <mat-header-cell *matHeaderCellDef> Bond Price </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.bond.bondPrice}} </mat-cell>
+            </ng-container>
+          
+            <!-- Maturity Date Column -->
+            <ng-container matColumnDef="maturity_date">
+              <mat-header-cell *matHeaderCellDef> Maturity Date </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.bond.maturityDate}} </mat-cell>
+            </ng-container>
+          
+            <!-- Header Row -->
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          
+            <!-- Row -->
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+          </mat-table>
+          
+    </mat-tab>
+
+</mat-tab-group>
+</div>
+
+<div class="chart-container">
+  <div class="chart-row">
+    <div class="chart">
+      <canvas style="display: none;" #pieChart1 id="pieChart1" ></canvas>
+    </div>
+  </div>
+  <div class="chart-row bottom-row">
+    <div class="chart">
+      <canvas style="display: none;" #pieChartBonds id="pieChartBonds"></canvas>
+    </div>
+    <div class="chart">
+      <canvas style="display: none;" #pieChartStocks id="pieChartStocks" ></canvas>
+    </div>
+  </div>
+</div>
+

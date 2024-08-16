@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+ .mat-icon{
+    cursor: pointer;
+ }
+
+ .custom-toolbar {
+   background-color: #ffffff; /* Example background color */
+   /* color: #FBFBFB; */
+   font-family: 'Poppins', sans-serif; /* Font family */
+ }
+ 
+ .home-icon {
+   font-size: 20px; /* Change the icon size */
+   color: #333; /* Change the icon color */
+ }
+ 
+ .title {
+   font-family: 'Poppins', sans-serif; /* Font family */
+   font-weight: 400; /* Bold weight */
+   color: #333; /* Text color */
+   padding-left: 40px; /* Left padding */
+ }
+ 
+ .nav-element {
+   font-family: 'Poppins', sans-serif; /* Font family */
+   position: relative; /* Relative positioning for underline effect */
+   color: #333; /* Text color */
+   font-size: 18px;
+   font-weight: 400;
+   cursor: pointer; /* Cursor pointer */
+   text-decoration: none; /* Remove default underline */
+   margin: 0 10px; 
+ }
+ 

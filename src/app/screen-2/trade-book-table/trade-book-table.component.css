@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Global styles */
+* {
+    font-family: 'Poppins', sans-serif;
+    color: #3F2E2E; /* Use one of your theme colors */
+  }
+  
+  .mat-elevation-z8 {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  mat-header-cell, mat-cell {
+    padding: 16px;
+    border-bottom: 1px solid #CCE0DA;
+  }
+  
+  mat-header-cell {
+    background-color: #B6CDC8;
+    font-weight: 500;
+    color: #3F2E2E;
+  }
+  
+  mat-cell {
+    background-color: #ffffff;
+    font-weight: 300;
+    color: #3F2E2E;
+  }
+  
+  mat-header-row, mat-row {
+    transition: background-color 0.3s ease;
+  }
+  
+  mat-row:hover {
+    background-color: #CCE0DA;
+  }
+  
+  mat-header-row, mat-row {
+    display: flex;
+    align-items: center;
+  }
+
+  mat-header-row {
+    background-color: #f7e8e9;
+  }
+  
+  mat-header-cell, mat-cell {
+    flex: 1;
+    text-align: left;
+  }
+  
+  .mat-column-asset_name, .mat-column-ticker_symbol, .mat-column-category, .mat-column-date, .mat-column-volume, .mat-column-amount, .mat-column-action {
+    text-align: left;
+  }
+  
+  /* Additional styles for a seamless appearance */
+  mat-table {
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  

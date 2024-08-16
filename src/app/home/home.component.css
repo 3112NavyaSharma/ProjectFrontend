@@ -1,0 +1,27 @@
+.welcome-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 64px); /* Full height minus the toolbar height */
+    text-align: center;
+    background-color: #f7e8e9;
+  }
+  
+  .welcome-message {
+    font-family: 'Poppins', sans-serif; /* Font family */
+  }
+  
+  .welcome-message strong {
+    font-weight: 700; /* Bold text */
+    font-size: 22px; /* Font size */
+    color: #3F2E2E; /* Text color */
+  }
+  
+  .welcome-message em {
+    font-weight: 500; /* Semi-bold text */
+    font-size: 15px; /* Font size */
+    color: #3F2E2E; /* Text color */
+    display: block; /* Block display for proper spacing */
+    margin-top: 10px; /* Margin top for spacing */
+  }
+  
